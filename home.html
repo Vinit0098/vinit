@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dad!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ff6347;
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        .message {
+            font-size: 1.3em;
+            margin-top: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .birthday-image {
+            width: 300px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .celebration {
+            font-size: 1.2em;
+            margin-top: 30px;
+            color: #ff1493;
+        }
+
+        .button {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday, Dad!</h1>
+
+    <p id="date"></p>
+
+    <div class="message">
+        <p>Dear Dad,</p>
+        <p>Wishing you a day filled with joy, love, and laughter!</p>
+        <p>Thank you for always being there for me. You're the greatest father, and I'm so grateful for everything you've done for me.</p>
+        <p>Happy Birthday!</p>
+    </div>
+
+    <img src="d1.jpeg" alt="Birthday Cake" class="birthday-image" />
+
+    <p class="celebration">Enjoy your special day to the fullest! 🎉</p>
+
+    <!-- Buttons -->
+    <button class="button" onclick="displayAlert()">Click to Wish Dad!</button>
+    <!-- WhatsApp Share Button -->
+    <a id="whatsapp-share" class="button" target="_blank">Share on WhatsApp</a>
+
+    <script>
+        // Show today's date
+        let today = new Date();
+        let options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("date").textContent = "Today's Date: " + today.toLocaleDateString('en-US', options);
+
+        // Show popup alert
+        function displayAlert() {
+            alert("Happy Birthday, Dad! 🎂🎉 Love you!");
+        }
+
+        // WhatsApp share logic
+        const url = encodeURIComponent(window.location.href);
+        const message = encodeURIComponent("Check out this birthday page I made for Dad! 🎉\n" + url);
+        document.getElementById("whatsapp-share").href = `https://wa.me/?text=${message}`;
+    </script>
+
+</body>
+</html>
